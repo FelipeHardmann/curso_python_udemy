@@ -31,3 +31,9 @@ contNum(num)'''
 
 # resultado = [str(item).upper() for item in lista]
 
+print('''
+    ========== MENU ==========
+
+        1 - bLA BLA 
+        
+''')
