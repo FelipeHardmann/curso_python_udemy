@@ -1,4 +1,5 @@
-from Log import LogPrintMixin, LogFileMixin
+# from Log import LogPrintMixin, LogFileMixin
+from eletronico import Smartphone
 
 # lp = LogPrintMixin()
 # lp.logError('Qualquer coisa')
@@ -8,3 +9,10 @@ from Log import LogPrintMixin, LogFileMixin
 # lf.log_sucess('Sucesso')
 
 
+galaxy = Smartphone('Galaxy S')
+iphone = Smartphone('iPhone')
+
+# galaxy.ligar()
+galaxy.desligar()
+# iphone.ligar()
+iphone.desligar()
