@@ -1,11 +1,14 @@
 # Funções decoradas em Python
 def meu_repr(self):
+    '''Criando minha representação'''
     class_name = self.__class__.__name__
     class_dict = self.__dict__
     class_repr = f'{class_name}({class_dict})'
     return class_repr
 
+# Funções decoradoras vão receber a classe em si
 def adiciona_repr(cls):
+    '''Adicionando minha representação'''
     cls.__repr__ = meu_repr
     return cls
 
@@ -17,9 +20,6 @@ def meu_planeta(metodo):
         return resultado
     return interno
 
-
-class SuperTime:
-    ...
 
 @adiciona_repr
 class Time:
@@ -35,10 +35,11 @@ class Planeta:
     def falar_nome(self) -> str:
         return f'O planeta é {self.nome}'
 
-
+# Time = adiciona_repr(Time)
 brasil = Time('Brasil')
 portugal = Time('Portugal')
 
+# Planeta = adiciona_repr(Planeta)
 terra = Planeta('Terra')
 marte = Planeta('Marte')
 
