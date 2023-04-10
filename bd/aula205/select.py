@@ -23,5 +23,22 @@ for row in cursor.fetchall():
 # for i in range(4):
 #     print(cursor.fetchone)
 
+cursor.execute(
+    f'DELETE FROM {TABLE_NAME}\
+        WHERE id = "3"'
+)
+connection.commit()
+
+cursor.execute(
+    f'UPDATE {TABLE_NAME} \
+    SET name = "Qualquer" \
+    WHERE id = 2'
+)
+connection.commit()
+
+cursor.execute(
+    f'SELECT * FROM {TABLE_NAME}'
+)
+
 cursor.close()
 connection.close()
