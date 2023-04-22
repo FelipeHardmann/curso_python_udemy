@@ -16,7 +16,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
 
+# Utiliza o padrão MVT(MVC)
+# O view é responsável por organizar, parecido com o controller
+# Toda view recebe uma request e retorna uma response
+def my_view(request):
+    return HttpResponse('Erro 404 \
+                        Essa página, não existe, por favor, tente outra URL')
+
+def home(request):
+    return HttpResponse('Home')
+
+'''
+    Assim que nós adicionamos outra URL no nosso urlpatterns
+    não conseguimos entrar na página antiga da doc do Django
+
+    Importamos o HttpResponse por conta de precisarmos de uma resposta do servidor
+    Assim que o usuário informar fizer a request(requisição)
+'''
+# Área administrativa do django 
+# O path precisa receber uma rota e uma view, por padrão
 urlpatterns = [
+    path('', home),
+    path('blog/', my_view),
     path('admin/', admin.site.urls),
 ]
