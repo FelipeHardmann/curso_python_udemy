@@ -28,6 +28,9 @@ def my_view(request):
 def home(request):
     return HttpResponse('Home')
 
+def my_view2(request):
+    return HttpResponse('Opa, agora sim, estamos na url correta')
+
 '''
     Assim que nós adicionamos outra URL no nosso urlpatterns
     não conseguimos entrar na página antiga da doc do Django
@@ -40,5 +43,6 @@ def home(request):
 urlpatterns = [
     path('', home),
     path('blog/', my_view),
+    path('blog2/', my_view2),
     path('admin/', admin.site.urls),
 ]
