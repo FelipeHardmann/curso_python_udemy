@@ -15,21 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.http import HttpResponse
-
-# Utiliza o padrão MVT(MVC)
-# O view é responsável por organizar, parecido com o controller
-# Toda view recebe uma request e retorna uma response
-def my_view(request):
-    return HttpResponse('Erro 404 \
-                        Essa página, não existe, por favor, tente outra URL')
-
-def home(request):
-    return HttpResponse('Home')
-
-def my_view2(request):
-    return HttpResponse('Opa, agora sim, estamos na url correta')
+from django.urls import path, include
+# from home.views import home
+# from blog.views import blog
 
 '''
     Assim que nós adicionamos outra URL no nosso urlpatterns
@@ -40,9 +28,9 @@ def my_view2(request):
 '''
 # Área administrativa do django 
 # O path precisa receber uma rota e uma view, por padrão
+#O include pega da raiz, ou seja precisamos passar o caminho correto
 urlpatterns = [
-    path('', home),
-    path('blog/', my_view),
-    path('blog2/', my_view2),
+    path('', include('home.urls')),
+    path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
 ]
