@@ -1,5 +1,5 @@
 """
-URL configuration for projeto project.
+URL configuration for project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,22 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-# from home.views import home
-# from blog.views import blog
+from django.urls import path
 
-'''
-    Assim que nós adicionamos outra URL no nosso urlpatterns
-    não conseguimos entrar na página antiga da doc do Django
-
-    Importamos o HttpResponse por conta de precisarmos de uma resposta do servidor
-    Assim que o usuário informar fizer a request(requisição)
-'''
-# Área administrativa do django 
-# O path precisa receber uma rota e uma view, por padrão
-#O include pega da raiz, ou seja precisamos passar o caminho correto
 urlpatterns = [
-    path('', include('home.urls')),
-    path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
+    path('blog/'),
 ]
