@@ -1,9 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def blog(request):
-    return HttpResponse("You're in my view")
+    return render(
+        request,
+        template_name='blog/index.html'
+    )
 
 def exemplo(request):
-    return HttpResponse("You're in example")
+    return render(
+        request,
+        template_name='blog/exemplo.html'
+    )
