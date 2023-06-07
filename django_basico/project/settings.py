@@ -120,6 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILE_DIRS = [
+    # ! Aqui estamos falando para o nosso programa que ele deve verificar 
+    BASE_DIR / 'base' / 'static'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
