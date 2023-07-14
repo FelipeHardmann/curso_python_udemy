@@ -3,4 +3,13 @@ from django.http import HttpResponse
 
 # Create your views here.
 def blog(request):
-    return HttpResponse('blog')
+    return render(
+        request,
+        'blog/blog.html'
+    )
+
+def example(request):
+    return render(
+        request,
+        'blog/example.html'
+    )
